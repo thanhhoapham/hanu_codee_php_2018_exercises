@@ -15,7 +15,7 @@ if (isset($_POST['cont'])) {
     include 'count_answer.php';
     $_SESSION['page1_mark'] = $mark;
     $_SESSION['no_of_ques_pg1'] = $no_of_ques;
-    header("Location: http://localhost/codee/week3/quiz/second_page.php");
+    header("Location: http://localhost/codee/bichloan/hanu_codee_php_2018/loanntb/quiz/second_page.php");
 }
 
 ?>

@@ -1,6 +1,14 @@
 <?php
-if (isset($_POST['button'])) {
-include 'function.php';
+include ('function.php');
+    
+// if (isset($_POST['button'])) {
+    if (isset($_POST['number_a']) && (isset($_POST['number_b']))) {
+        $a = $_POST['number_a'];
+        $b = $_POST['number_b'];
+        equation1($a, $b, $error);
+    }
+if (isset($_POST['back'])) {
+    header("Location: http://localhost/codee/bichloan/hanu_codee_php_2018/loanntb/equation/home.php");
 }
 ?>
 <!DOCTYPE html>
@@ -25,8 +33,6 @@ include 'function.php';
                 </label>
                 <input name="number_b" type="text" placeholder="Enter b here"><br>
                 <button name="button" type="submit">Quất</button>
-                <!--<input type="button" name="button" id="input_b" value="Quất"><br>-->
-                <!--How to check isset of input type = button?-->
             </form>
             <div id="result">
                 <?php
@@ -42,6 +48,9 @@ include 'function.php';
                 }
                 ?>
             </div>
+            <form method=post>
+            <button style="text-align: left;" name="back" type="submit">Back</button>
+            </form>
         </div>
     </body>
 </html>
