@@ -7,7 +7,7 @@ equation1($a,$b,$message);
 include "include/header.php";
 ?>
 	<form action="equation1.php" method="GET">
-    	<h3>Enter the values of a and b in the equation ax+b=0?</h2>
+    	<h3>Enter the values of a and b in the equation ax+b=0?</h3>
 		<div align= "center">
 			<input class="const" type="number" name="a" value="<?php echo $a ?>"> x+
 			<input class="const" type="number" name="b" value="<?php echo $b ?>"> =0
