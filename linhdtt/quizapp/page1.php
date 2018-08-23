@@ -2,16 +2,8 @@
     for($i=1;$i<=25;$i++){
         $answer[$i]=isset($_GET["answerq".$i])?$_GET["answerq".$i]:"";
     }
+    include "header.php";
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="theme.css">
-    <title> Quiz App - part 1</title>
-</head>
-<body>
-	<h1> Welcome to Online Quiz App! </h1>
 <form action="/page2.php" method="get">
 
 <section id='q01'>Question 1:
