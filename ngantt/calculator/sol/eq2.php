@@ -1,9 +1,12 @@
-<?php include 'funct.php'; ?>
+<?php 
+include 'functions.php';
+?>
+<!-- CSS and HTML  -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Week1 Ex1</title>
+    <title>ax^2 + bx + c = 0</title>
 </head>
 <style>
 fieldset{
@@ -12,6 +15,7 @@ fieldset{
     width: 30%;
     padding-bottom: 100px;
     text-align: center;
+
     /*padding: 50% 50%;*/
 }
 p{
@@ -22,6 +26,7 @@ legend{
     font-size: 200%;
     font-weight: bold;
     color: lightblue;
+
 }
 .error {
     color: red;
@@ -31,6 +36,9 @@ legend{
 }
 .info {
     color: blue;
+}
+.button{
+    font-size: 20px;
 }
 div.header{
     padding-bottom: -100px;
@@ -53,32 +61,33 @@ div.footer{
 .font{
     height: 23px;
     font-size: 24px;
-}
-.button{
-    font-size: 20px;
+    margin-bottom: 0px;
 }
 
 </style>
 
-<body> 
-    <div class="header"> Equation App </div>
+<body>  
+    <div class="header"> Equation App</div>
        <form action="" method="GET">
         <fieldset>
-            <legend>ax + b = 0 equation</legend>
+            <legend>ax^2 + b*x + c = 0 equation</legend>
             <?php if ($error): // 0/[]/null/'' ?>
             <p class="error"><?= $error ?></p>
             <?php endif; ?>
             <p>   
                 <label class="font" for="a">a: </label>
-                <input class="font" autofocus="true" type="text" id="a" name="a" value="<?php echo isset($_GET['a'])?$_GET['a']:''; ?>">
+                <input class="font" autofocus="true" type="number" id="a" name="a" value="<?php echo isset($_GET['a'])?$_GET['a']:''; ?>" placeholder="number...">
                 <!--'dk ? a : b'-->
             </p>
-            <br>
             <p>
                 <label class="font" for="b">b: </label>
-                <input class="font" type="text" name="b" id="b" name ="b" value="<?php echo isset($_GET['b'])?$_GET['b']:''; ?>">
+                <input class="font" type="number" name="b" id="b" name ="b" value="<?php echo isset($_GET['b'])?$_GET['b']:''; ?>">
             </p>
-            <input class="button" type="submit" name="exe" value="Execute">
+            <p>
+                <label class="font" for="b">c: </label>
+                <input class="font" type="number" name="c" id="c" name ="c" value="<?php echo isset($_GET['c'])?$_GET['c']:''; ?>">
+            </p>
+            <input type="submit" name="exe" value="Execute" class="button">
             <?php if($msg): ?>
             <p class="info"><?= $msg ?></p>
             <?php endif; ?>
@@ -86,8 +95,6 @@ div.footer{
         <br>
     </form>
     <div class="footer"> </div>
-    </div> 
- </body>
+</body>
 </html>
-<!--Use method 'POST' and input type 'file' for sending file
-use "multiple" attribute to send multi files-->
+

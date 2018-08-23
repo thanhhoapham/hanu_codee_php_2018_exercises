@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>INDEX</title>
+	<title>Index</title>
 </head>
 <body>
 	<div class="header">Calculator app</div>
-	<div class="inner"><a href="eq1.php">Solv ax + b = 0 equation</a></div>
-	<div class="inner"><a href="eq1.php">Solv ax^2 + bx + c = 0 equation</a></div>
+	 <div class="body"><button class="button"><a href="http://n.edu/calculator/sol/eq1.php">1st degree equation <br>(ax + b = 0) </a></button>
+	<button class="button button2"><a href="http://n.edu/calculator/sol/eq2.php">2nd degree equation <br>(ax^2 + bx + c = 0) </a> </button></div>
 	<div class="footer"></div>
 </body>
 </html>
 <style>
+.body{
+	text-align: center;
+	margin-top: 157px;
+	margin-bottom: 157px;
+}
 div.header{
     padding-bottom: -100px;
     height: 100px;
@@ -21,21 +26,7 @@ div.header{
     font-size: 25px;
     font-family: Arial;
 }
-div.inner {
-	display: block;
-	border: 1px solid black;
-	border-radius: 4px;
-	margin: 150px 100px 150px 100px;
-	text-decoration: none;
-}
-div.inner a {
-	text-decoration: none;
-	font-weight: 500px;
-	font-size: 20px;
-	text-align: center;
-	padding: 100px 100px 100px 100px;
-	margin: 100px 100px 100px 100px;
-}
+
 div.footer{
     height: 100px;
     background-color: #ccc;
@@ -45,5 +36,26 @@ div.footer{
     margin-top: 95px;
     font-family: Arial;
 }
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 45px 62px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 7px 5px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.button a{
+	color: white;
+	text-decoration: none;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
 </style>
 </html>

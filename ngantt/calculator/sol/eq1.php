@@ -1,16 +1,17 @@
-<?php include 'funct.php'; ?>
+<?php include 'functions.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Week1 Ex1</title>
+    <title>ax + b = 0</title>
 </head>
 <style>
 fieldset{
-    margin-top: 100px;
+    margin-top: 75px;
+    margin-bottom: ;
     margin-left: 530px;
     width: 30%;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
     text-align: center;
     /*padding: 50% 50%;*/
 }

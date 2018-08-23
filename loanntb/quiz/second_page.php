@@ -9,12 +9,6 @@ $list = array(
     array("Q8", "A", "B", "C", "D", "C")
 );
 
-$answer = [
-    ["key1" => "B"],
-    ["key2" => "B"],
-    ["key3" => "A"]
-];
-
 $order = 0;
 $no_of_ques = count($list);
 $no_of_element = count($list[0]);
@@ -23,12 +17,7 @@ if (isset($_POST['submit'])) {
     include 'count_answer.php';
     $_SESSION['page2_mark'] = $mark;
     $_SESSION['no_of_ques_pg2'] = $no_of_ques;
-    // header("Location: http://localhost/codee/bichloan/hanu_codee_php_2018/loanntb/quiz/submit.php");
-}
-
-if (isset($_POST['return'])) {
-    $_SESSION['page2_mark'] = $mark;
-    header("Location: http://localhost/codee/bichloan/hanu_codee_php_2018/loanntb/quiz/first_page.php");
+    header("Location: http://localhost/codee/week3/quiz/submit.php");
 }
 
 ?>

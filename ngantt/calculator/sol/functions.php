@@ -1,47 +1,84 @@
-			<!-- ax+b=0 SOLUTION FUNCTION -->
 <?php
-$msg = $error = null;
-$a=$b='';
+$error = $msg = null;
 
-if(isset($_GET['a']) && $_GET['b']){
-    $a = $_GET['a'];
-    $b = $_GET['b'];
-    if(is_numeric($a) && is_numeric($b)){
-
+/**
+ * validates $param (null, empty, numeric) and
+ * returns whether valid or not
+ */
+function validate($a, $b, $c, &$error) {
+    if (isset($_GET['a'] && $_GET['b'] && $_GET['c'])){
+        $a = $_GET['a'];
+        $b = $_GET['b'];
+        $c = $_GET['c'];
+    }
+	else if (is_null($a) && is_null($b) && is_null($c)) {
+        $error = 'Invalid numbers';
+        return $error;
+    }  else if (empty($a) && empty($b) && empty($c)) {
+		$error = 'Invalid numbers';
+		return $error;
+	} else if (is_numeric($a) && is_numeric($b) && is_numeric($c)){
+		$error = 'valid numbers';
+		return $error;
+	}
+	}
+/**
+ * solves 1st degree equation,
+ * returns string root
+ * @modifies $error
+ * @effects
+ *  validate $a, $b
+ *  if error 
+ *      modify $errors & returns null
+ *  else 
+ *      if $a eq 0 /\ $b eq 0
+ *          returns 'many roots'
+ *      elseif $a eq 0 /\ $b neq 0
+ *          returns 'no root'
+ *      else 
+ *          returns '1 root x=-b/a'
+ */
+function equation1($a, $b, &$error) {
+	$validate = validate($a, $b, $c, $error);
+	return $validate;
+	
         if($a != 0){
            $root = -$b / $a;
            $msg = 'root x = '.$root;
+           return $msg;
        }else{
         if($b != 0){
             $error = 'This equation can not be solved.';
+            return $error;
         }
         else{
             $root = 'This equation is true with all value of x.';
+            return $root;
         }
     } 
-}
-else{
- $error = 'This equation is true with all value of x.';
-}
-}
-else{
-    $error = 'a and b are required.';
-}
-?>
-			
-			<!-- ax^2+bx+c=0 SOLUTION FOR QUARDRATIC EQUATION FUNCTION -->
-<?php
-$msg = $error = null;
-$a=$b=$c='';
+	}
 
-		/*Users input a, b, c*/
-if(isset($_GET['a']) && $_GET['b'] && $_GET['c']){
-    $a = $_GET['a'];
-    $b = $_GET['b'];
-    $c = $_GET['c'];
 
-    if(is_numeric($a) && is_numeric($b) && is_numeric($c)){    	
-    	if($a == 0){
+/**
+ * solves 2nd degree equation,
+ * returns string root
+ * @modifies $error
+ * @effects
+ *  validate $a, $b
+ *  if error 
+ *      modify $errors & returns null
+ *  else 
+ *      if a eq 0
+ *          invokes #equation1($b, $c, $error) & returns 
+ *      else
+ *          delta=...            
+ *      
+ */
+// java pass by reference vs pass by value
+function equation2($a, $b, $c, &$error) {
+	$validate = validate($a, $b, $c, $error);
+	return $validate;
+        	if($a == 0){
 
     		if($b == 0){
 
@@ -102,13 +139,7 @@ if(isset($_GET['a']) && $_GET['b'] && $_GET['c']){
    					
     			}
     		}
-
-    	}
     }
 
-    	/*No a, b, c are token*/
-    else {
-    		$error = 'a, b, c  are required.';
-    	}
 
-?>
+
